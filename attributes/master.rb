@@ -163,6 +163,26 @@ default['jenkins']['master'].tap do |master|
   master['port'] = 8080
 
   #
+  # The address bound to the Jenkins process if using HTTPS.  Default is disabled.
+  #
+  master['https_listen_address'] = ""
+
+  #
+  # The port which the Jenkins process will listen on if using HTTPS.  Default is disabled.
+  #
+  master['https_port'] = ""
+
+  #
+  # Location in the filesystem for the java keystore.
+  #
+  master['java_keystore'] = ""
+
+  #
+  # Password for the java keystore.
+  #
+  master['java_keystore_password'] = ""
+
+  #
   # The top-level endpoint for the Jenkins master. By default, this is a
   # "compiled" attribute from +jenkins.master.host+ and +jenkins.master.port+,
   # but you will need to change this attribute if you choose to serve Jenkins

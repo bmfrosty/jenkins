@@ -69,7 +69,7 @@ JENKINS_LISTEN_ADDRESS="<%= node['jenkins']['master']['listen_address'] %>"
 # HTTPS port Jenkins is listening on.
 # Default is disabled.
 #
-JENKINS_HTTPS_PORT=""
+JENKINS_HTTPS_PORT="<%= node['jenkins']['master']['https_port'] %>"
 
 ## Type:        string
 ## Default:     ""
@@ -78,7 +78,25 @@ JENKINS_HTTPS_PORT=""
 # IP address Jenkins listens on for HTTPS requests.
 # Default is disabled.
 #
-JENKINS_HTTPS_LISTEN_ADDRESS=""
+JENKINS_HTTPS_LISTEN_ADDRESS="<%= node['jenkins']['master']['https_listen_address'] %>"
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# Path to the Java Keystore on the filesystem.
+# When left blank will be ignored.
+#
+JENKINS_HTTPS_KEYSTORE="<%= node['jenkins']['master']['java_keystore'] %>"
+
+## Type:        string
+## Default:     ""
+## ServiceRestart: jenkins
+#
+# Password for the Java Keystore on the filesystem.
+# Will only be used in conjunction with the Java Keystore.
+#
+JENKINS_HTTPS_KEYSTORE_PASSWORD='<%= node['jenkins']['master']['java_keystore_password'] %>'
 
 ## Type:        integer(0:65535)
 ## Default:     8009

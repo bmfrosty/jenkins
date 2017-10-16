@@ -48,6 +48,18 @@ HTTP_LISTEN_ADDRESS="<%= node['jenkins']['master']['listen_address'] %>"
 # port for HTTP connector (default 8080; disable with -1)
 HTTP_PORT=<%= node['jenkins']['master']['port'] %>
 
+# address bound to HTTPS connector (default ""; enable with a valid ip address)
+JENKINS_HTTPS_PORT="<%= node['jenkins']['master']['https_port'] %>"
+
+# port for HTTPS connector (default ""; enable with a valid port number - ex 8443)
+JENKINS_HTTPS_LISTEN_ADDRESS="<%= node['jenkins']['master']['https_listen_address'] %>"
+
+# path to the java keystore on filesystem (default ""; enable with path to java keystore)
+JENKINS_HTTPS_KEYSTORE="<%= node['jenkins']['master']['java_keystore'] %>"
+
+# password for the java keystore (default ''; enable with string)
+JENKINS_HTTPS_KEYSTORE_PASSWORD='<%= node['jenkins']['master']['java_keystore_password'] %>'
+
 # port for AJP connector (disabled by default)
 AJP_PORT=-1
 
